@@ -24,7 +24,7 @@ connection.once("open",()=>{
 })
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://www.auraboutiquecosmetics.com/',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
@@ -54,7 +54,9 @@ app.use("/api/reviews",reviewRouter)
 
 app.listen(
   5000,
-  ()=>{
-    console.log('Server is running on port 5000');
+  '0.0.0.0',
+  () => {
+    console.log('Server is running on port 5000 and accessible from outside');
   }
-)
+);
+
